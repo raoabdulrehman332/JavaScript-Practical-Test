@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashbord</title>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <aside class="sidebar" style="display: block;" data-aos="fade-right">
+        
+
+            <div class="logo">
+                <h2>My Logo</h2>
+            </div>
+            <ul>
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-edit"></i> My Posts</a></li>
+                <li id="creat-post"><a href="#"> <i class="fas fa-plus-circle"></i> Create New Post</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li id="sign-out"><i class="fas fa-sign-out-alt"></i> Sign Out</li>
+            </ul>
+        </aside>
+        <main class="main-content" data-aos="fade-up">
+            <header>
+                <div class="header-title">
+                    <h1 id="user">Welcome Back, [Username]</h1>
+                    <p>Here’s what’s happening with your blog today.</p>
+                </div>
+                
+            </header>
+            <section class="stats">
+                <div class="card">
+                    <h3>Total Posts</h3>
+                    <p>24</p>
+                    <i class="fas fa-blog"></i>
+                </div>
+                <div class="card">
+                    <h3>Total Views</h3>
+                    <p>1,200</p>
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="card">
+                    <h3>Comments</h3>
+                    <p>58</p>
+                    <i class="fas fa-comments"></i>
+                </div>
+            </section>
+            <section class="recent-posts">
+                <h2>Recent Posts</h2>
+                <div class="post-item" id="post">
+                    <h3>Title of a Blog Post</h3>
+                    <p>Excerpt of the post content goes here...</p>
+                    <a href="#">Read more</a>
+                </div>
+                
+            </section>
+        </main>
+    </div>
+    <script type="module" src="dashbord.js"></script>
+    <!-- swall alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- aos animation -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
