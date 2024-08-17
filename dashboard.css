@@ -193,3 +193,7 @@ header {
 .post-item a:hover {
     color: #1abc9c;
 }
+
+#post-section{
+    display: block;
+}

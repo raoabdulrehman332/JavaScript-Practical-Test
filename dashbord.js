@@ -1,5 +1,6 @@
 import { auth } from "./firebase.mjs";
-
+import { db } from "./firebase.mjs";
+import { collection, getDocs  } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 import {signOut} from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
 
 
@@ -11,14 +12,6 @@ let postItem =document.getElementById("post")
 
 
 
-
-
-
-
-console.log(postItem.innerHTML);
-
-
-user.innerHTML = `Welcom back  `
 
 signout.addEventListener('click',()=>{
 
@@ -51,11 +44,18 @@ creatPost.addEventListener('click',async ()=>{
 
 function display(){
 
-
-  
-  statment1 +=`<h3>Abdul rehman</h3>
+  statment1 +=`<h3>${data()}</h3>
   <p>Excerpt of the post content goes here...</p>
-  <a href="#">Read more</a>`            
-   
+   <a href="#">Read more</a>`               
 }
 
+async function getData() {
+  const querySnapshot = await getDocs(collection(db, "users"));
+  querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()}`);
+  console.log(doc.data());
+  console.log(doc.id);
+});
+}
+
+getData()
